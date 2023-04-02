@@ -106,6 +106,65 @@ namespace ce100_hw2_algo_test_cs
         }
     }
 
+    [TestClass]
+    public class MatrixChainMultiplicationMemorizedRecTests
+    {
+        [TestMethod]
+        public void TestMCMRemBestCase()
+        {
+            // Arrange
+            int[] matrixDimensionArray = { 30, 35, 15, 5, 10, 20, 25 };
+            int operationCount = 0;
+            string matrixOrder = null;
+
+            // Act
+            int result = MatrixChainMultiplicationMemorizedRec.mcmrem(matrixDimensionArray, ref matrixOrder, ref operationCount);
+
+            // Assert
+            Assert.AreEqual(0, result);
+            Assert.AreEqual("((A1.(A2.A3)).((A4.A5).A6))", matrixOrder);
+            Assert.AreEqual(15125, operationCount);
+        }
+
+        [TestMethod]
+        public void TestMCMRemWorstCase()
+        {
+            // Arrange
+            int[] matrixDimensionArray = { 10, 20, 30, 40, 50, 60 };
+            int operationCount = 0;
+            string matrixOrder = null;
+
+            // Act
+            int result = MatrixChainMultiplicationMemorizedRec.mcmrem(matrixDimensionArray, ref matrixOrder, ref operationCount);
+
+            // Assert
+            Assert.AreEqual(0, result);
+            Assert.AreEqual("((((A1.A2).A3).A4).A5)", matrixOrder);
+            Assert.AreEqual(68000, operationCount);
+        }
+
+        [TestMethod]
+        public void TestMCMRemAverageCase()
+        {
+            // Arrange
+            int[] matrixDimensionArray = { 20, 30, 40, 10, 5, 30 };
+            int operationCount = 0;
+            string matrixOrder = null;
+
+            // Act
+            int result = MatrixChainMultiplicationMemorizedRec.mcmrem(matrixDimensionArray, ref matrixOrder, ref operationCount);
+
+            // Assert
+            Assert.AreEqual(0, result);
+            Assert.AreEqual("((A1.(A2.(A3.A4))).A5)", matrixOrder);
+            Assert.AreEqual(14000, operationCount);
+        }
+    }
+
+
+
+
+
 
 
 

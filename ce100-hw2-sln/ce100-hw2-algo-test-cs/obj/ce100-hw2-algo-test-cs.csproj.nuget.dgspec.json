@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj": {}
+    "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj": {
+    "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj",
+        "projectUniqueName": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj",
         "projectName": "ce100-hw2-algo-lib-cs",
-        "projectPath": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj",
+        "projectPath": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,14 +19,14 @@
         "net48": {}
       }
     },
-    "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj": {
+    "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
+        "projectUniqueName": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
         "projectName": "ce100-hw2-algo-test-cs",
-        "projectPath": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
+        "projectPath": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
         "packagesPath": "C:\\Users\\gullu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\obj\\",
+        "outputPath": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gullu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,8 +43,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj": {
-                "projectPath": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj"
+              "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj": {
+                "projectPath": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-lib-cs\\ce100-hw2-algo-lib-cs.csproj"
               }
             }
           }
