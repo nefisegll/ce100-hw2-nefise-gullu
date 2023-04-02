@@ -4,3 +4,9 @@ C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.csproj.CoreCompileInputs.cache
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.dll
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.pdb
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\bin\Debug\ce100-hw2-algo-lib-cs.dll
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\bin\Debug\ce100-hw2-algo-lib-cs.pdb
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.csproj.AssemblyReference.cache
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.csproj.CoreCompileInputs.cache
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.dll
+C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-lib-cs\obj\Debug\ce100-hw2-algo-lib-cs.pdb
