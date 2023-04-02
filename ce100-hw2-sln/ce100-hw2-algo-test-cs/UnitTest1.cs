@@ -54,6 +54,59 @@ namespace ce100_hw2_algo_test_cs
         }
     }
 
+    [TestClass]
+    public class MatrixChainMultiplicationDPTests
+    {
+        [TestMethod]
+        public void TestMatrixChainMultiplicationDP_BestCase()
+        {            
+            int[] matrixDimensionArray = new int[] { 30, 35, 15, 5, 10, 20, 25 };
+            string expectedMatrixOrder = "((A1 (A2 A3)) ((A4 A5) A6))";
+            int expectedOperationCount = 40;
+            
+            string matrixOrder = "";
+            int operationCount = 0;
+            int result = MatrixChainMultiplicationDP.Mcmdp(matrixDimensionArray, ref matrixOrder, ref operationCount);
+            
+            Assert.AreEqual(expectedMatrixOrder, matrixOrder);
+            Assert.AreEqual(expectedOperationCount, operationCount);
+            Assert.AreEqual(15125, result);
+        }
+
+        [TestMethod]
+        public void TestMatrixChainMultiplicationDP_WorstCase()
+        {           
+            int[] matrixDimensionArray = new int[] { 10, 20, 30, 40, 50 };
+            string expectedMatrixOrder = "(((A1 A2) A3) A4)";
+            int expectedOperationCount = 13;
+            
+            string matrixOrder = "";
+            int operationCount = 0;
+            int result = MatrixChainMultiplicationDP.Mcmdp(matrixDimensionArray, ref matrixOrder, ref operationCount);
+            
+            Assert.AreEqual(expectedMatrixOrder, matrixOrder);
+            Assert.AreEqual(expectedOperationCount, operationCount);
+            Assert.AreEqual(38000, result);
+        }
+
+        [TestMethod]
+        public void TestMatrixChainMultiplicationDP_AverageCase()
+        {            
+            int[] matrixDimensionArray = new int[] { 5, 10, 3, 12, 5, 50 };
+            string expectedMatrixOrder = "(((A1 A2) (A3 A4)) A5)";
+            int expectedOperationCount = 24;
+            
+            string matrixOrder = "";
+            int operationCount = 0;
+            int result = MatrixChainMultiplicationDP.Mcmdp(matrixDimensionArray, ref matrixOrder, ref operationCount);
+            
+            Assert.AreEqual(expectedMatrixOrder, matrixOrder);
+            Assert.AreEqual(expectedOperationCount, operationCount);
+            Assert.AreEqual(1655, result);
+        }
+    }
+
+
 
 
 
