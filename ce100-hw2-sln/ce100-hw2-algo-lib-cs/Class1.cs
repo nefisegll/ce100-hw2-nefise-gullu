@@ -69,4 +69,58 @@ namespace ce100_hw2_algo_lib_cs
             }
         }
     }
+
+    public class MatrixChainMultiplicationDP
+    {
+        public static int Mcmdp(int[] matrixDimensionArray, ref string matrixOrder, ref int operationCount, bool enableDebug = false)
+        {
+            int n = matrixDimensionArray.Length - 1;
+            int[,] m = new int[n, n];
+            int[,] s = new int[n, n];
+
+            for (int len = 2; len <= n; len++)
+            {
+                for (int i = 0; i <= n - len; i++)
+                {
+                    int j = i + len - 1;
+                    m[i, j] = int.MaxValue;
+
+                    for (int k = i; k < j; k++)
+                    {
+                        int cost = m[i, k] + m[k + 1, j] + matrixDimensionArray[i] * matrixDimensionArray[k + 1] * matrixDimensionArray[j + 1];
+
+                        if (cost < m[i, j])
+                        {
+                            m[i, j] = cost;
+                            s[i, j] = k;
+                        }
+
+                        if (enableDebug)
+                        {
+                            Console.WriteLine($"M[{i},{j}] = {m[i, j]}");
+                        }
+
+                        operationCount++;
+                    }
+                }
+            }
+
+            matrixOrder = BuildMatrixOrder(s, 0, n - 1);
+            operationCount += n - 1;
+
+            return m[0, n - 1];
+        }
+
+        public static string BuildMatrixOrder(int[,] s, int i, int j)
+        {
+            if (i == j)
+            {
+                return $"A{i + 1}";
+            }
+            else
+            {
+                return $"({BuildMatrixOrder(s, i, s[i, j])} {BuildMatrixOrder(s, s[i, j] + 1, j)})";
+            }
+        }
+    }
 }
