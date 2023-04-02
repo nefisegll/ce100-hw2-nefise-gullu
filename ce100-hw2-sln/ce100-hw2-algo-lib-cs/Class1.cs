@@ -123,4 +123,77 @@ namespace ce100_hw2_algo_lib_cs
             }
         }
     }
+
+    public class MatrixChainMultiplicationMemorizedRec
+    {
+        public static int mcmrem(int[] matrixDimensionArray, ref string matrixOrder, ref int operationCount)
+        {
+            int n = matrixDimensionArray.Length - 1;
+            int[,] S = new int[n + 1, n + 1];
+            int[,] M = new int[n + 1, n + 1];
+            for (int i = 1; i <= n; i++)
+            {
+                M[i, i] = 0;
+            }
+
+            mcmremHelper(matrixDimensionArray, S, M, 1, n);
+
+            operationCount = M[1, n];
+            matrixOrder = parenthesize(S, 1, n);
+
+            if (operationCount == 0)
+            {
+                return -1; // failed
+            }
+            return 0; // succeed
+        }
+
+        public static int mcmremHelper(int[] p, int[,] S, int[,] M, int i, int j)
+        {
+            if (M[i, j] > 0)
+            {
+                return M[i, j];
+            }
+
+            if (i == j)
+            {
+                return 0;
+            }
+
+            int minCount = int.MaxValue;
+            int minK = -1;
+            for (int k = i; k < j; k++)
+            {
+                int leftCount = mcmremHelper(p, S, M, i, k);
+                int rightCount = mcmremHelper(p, S, M, k + 1, j);
+                int count = leftCount + rightCount + p[i - 1] * p[k] * p[j];
+                if (count < minCount)
+                {
+                    minCount = count;
+                    minK = k;
+                }
+            }
+
+            M[i, j] = minCount;
+            S[i, j] = minK;
+
+            return minCount;
+        }
+
+        public static string parenthesize(int[,] S, int i, int j)
+        {
+            if (i == j)
+            {
+                return "A" + i;
+            }
+
+            int k = S[i, j];
+            string left = parenthesize(S, i, k);
+            string right = parenthesize(S, k + 1, j);
+
+            return "(" + left + "." + right + ")";
+        }
+
+    }
+
 }
