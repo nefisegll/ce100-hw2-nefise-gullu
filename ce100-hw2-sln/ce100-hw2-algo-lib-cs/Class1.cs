@@ -188,8 +188,17 @@ namespace ce100_hw2_algo_lib_cs
 
     public class MatrixChainMultiplicationMemorizedRec
     {
+        /// <summary>
+        /// Computes the minimum number of scalar multiplications necessary to multiply a given sequence of matrices.
+        /// Uses memoization to optimize the recursive approach.
+        /// </summary>
+        /// <param name="matrixDimensionArray">Array containing the dimensions of the matrices.</param>
+        /// <param name="matrixOrder">String containing the optimal order to multiply the matrices.</param>
+        /// <param name="operationCount">Number of scalar multiplications necessary to multiply the matrices in the optimal order.</param>
+        /// <returns>0 if successful, -1 if failed.</returns>
         public static int mcmrem(int[] matrixDimensionArray, ref string matrixOrder, ref int operationCount)
         {
+            // Initialize variables.
             int n = matrixDimensionArray.Length - 1;
             int[,] S = new int[n + 1, n + 1];
             int[,] M = new int[n + 1, n + 1];
@@ -198,11 +207,14 @@ namespace ce100_hw2_algo_lib_cs
                 M[i, i] = 0;
             }
 
+            // Call helper function to calculate optimal number of scalar multiplications.
             mcmremHelper(matrixDimensionArray, S, M, 1, n);
 
+            // Set output variables.
             operationCount = M[1, n];
             matrixOrder = parenthesize(S, 1, n);
 
+            // Check if failed
             if (operationCount == 0)
             {
                 return -1; // failed
@@ -210,18 +222,31 @@ namespace ce100_hw2_algo_lib_cs
             return 0; // succeed
         }
 
+        /// <summary>
+        /// Helper function for mcmrem() to calculate the optimal number of scalar multiplications.
+        /// Uses memoization to optimize the recursive approach.
+        /// </summary>
+        /// <param name="p">Array containing the dimensions of the matrices.</param>
+        /// <param name="S">Array to store the optimal order to multiply the matrices.</param>
+        /// <param name="M">Array to store the minimum number of scalar multiplications needed to multiply the matrices.</param>
+        /// <param name="i">Starting index of the subsequence of matrices.</param>
+        /// <param name="j">Ending index of the subsequence of matrices.</param>
+        /// <returns>The minimum number of scalar multiplications necessary to multiply the matrices in the given subsequence.</returns>
         public static int mcmremHelper(int[] p, int[,] S, int[,] M, int i, int j)
         {
+            // Check if the value has already been calculated
             if (M[i, j] > 0)
             {
                 return M[i, j];
             }
 
+            // Base case: one matrix
             if (i == j)
             {
                 return 0;
             }
 
+            // Calculate the optimal number of scalar multiplications for all probable partitions.
             int minCount = int.MaxValue;
             int minK = -1;
             for (int k = i; k < j; k++)
@@ -236,6 +261,7 @@ namespace ce100_hw2_algo_lib_cs
                 }
             }
 
+            // Store the calculeted values.
             M[i, j] = minCount;
             S[i, j] = minK;
 
