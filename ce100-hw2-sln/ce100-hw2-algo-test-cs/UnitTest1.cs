@@ -161,6 +161,71 @@ namespace ce100_hw2_algo_test_cs
         }
     }
 
+    [TestClass]
+    public class LongestCommonSubsequenceTests
+    {
+        [TestMethod]
+        public void Lcs_BestCase_ReturnsCorrectLcsLengthAndString()
+        {
+            // Arrange
+            string input1 = "abcde";
+            string input2 = "abcde";
+            string expectedLcs = "abcde";
+            int expectedLcsLength = 5;
+
+            // Act
+            string actualLcs;
+            int actualLcsLength;
+            int result = LongestCommonSubsequence.Lcs(input1, input2, out actualLcs, out actualLcsLength);
+
+            // Assert
+            Assert.AreEqual(expectedLcs, actualLcs);
+            Assert.AreEqual(expectedLcsLength, actualLcsLength);
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void Lcs_WorstCase_ReturnsCorrectLcsLengthAndString()
+        {
+            // Arrange
+            string input1 = "abcdefghijklmnopqrstuvwxyz";
+            string input2 = "zyxwvutsrqponmlkjihgfedcba";
+            string expectedLcs = "z";
+            int expectedLcsLength = 1;
+
+            // Act
+            string actualLcs;
+            int actualLcsLength;
+            int result = LongestCommonSubsequence.Lcs(input1, input2, out actualLcs, out actualLcsLength);
+
+            // Assert
+            Assert.AreEqual(expectedLcs, actualLcs);
+            Assert.AreEqual(expectedLcsLength, actualLcsLength);
+            Assert.AreEqual(0, result);
+        }
+
+        [TestMethod]
+        public void Lcs_AverageCase_ReturnsCorrectLcsLengthAndString()
+        {
+            // Arrange
+            string input1 = "abcdxyzefg";
+            string input2 = "hijkxyzbklm";
+            string expectedLcs = "xyz";
+            int expectedLcsLength = 3;
+
+            // Act
+            string actualLcs;
+            int actualLcsLength;
+            int result = LongestCommonSubsequence.Lcs(input1, input2, out actualLcs, out actualLcsLength);
+
+            // Assert
+            Assert.AreEqual(expectedLcs, actualLcs);
+            Assert.AreEqual(expectedLcsLength, actualLcsLength);
+            Assert.AreEqual(0, result);
+        }
+    }
+
+
 
 
 

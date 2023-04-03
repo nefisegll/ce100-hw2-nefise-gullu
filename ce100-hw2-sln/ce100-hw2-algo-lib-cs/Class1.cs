@@ -195,5 +195,65 @@ namespace ce100_hw2_algo_lib_cs
         }
 
     }
+    public class LongestCommonSubsequence
+    {
+        public static int Lcs(string inputArray1, string inputArray2, out string outputLcs, out int outputLcslength, bool enableDebug = false)
+        {
+            int m = inputArray1.Length;
+            int n = inputArray2.Length;
+            int[,] lcsArray = new int[m + 1, n + 1];
+
+            for (int i = 0; i <= m; i++)
+            {
+                for (int j = 0; j <= n; j++)
+                {
+                    if (i == 0 || j == 0)
+                    {
+                        lcsArray[i, j] = 0;
+                    }
+                    else if (inputArray1[i - 1] == inputArray2[j - 1])
+                    {
+                        lcsArray[i, j] = lcsArray[i - 1, j - 1] + 1;
+                    }
+                    else
+                    {
+                        lcsArray[i, j] = Math.Max(lcsArray[i - 1, j], lcsArray[i, j - 1]);
+                    }
+                }
+            }
+
+            outputLcslength = lcsArray[m, n];
+            outputLcs = "";
+            int index = outputLcslength;
+            int k = m, l = n;
+            while (k > 0 && l > 0)
+            {
+                if (inputArray1[k - 1] == inputArray2[l - 1])
+                {
+                    outputLcs += inputArray1[k - 1];
+                    k--;
+                    l--;
+                    index--;
+                }
+                else if (lcsArray[k - 1, l] > lcsArray[k, l - 1])
+                {
+                    k--;
+                }
+                else
+                {
+                    l--;
+                }
+            }
+            outputLcs = new string(outputLcs.Reverse().ToArray());
+
+            if (enableDebug)
+            {
+                Console.WriteLine($"LCS Length: {outputLcslength}");
+                Console.WriteLine($"LCS String: {outputLcs}");
+            }
+
+            return 0;
+        }
+    }
 
 }
