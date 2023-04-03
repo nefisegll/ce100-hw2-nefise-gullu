@@ -101,44 +101,77 @@ namespace ce100_hw2_algo_lib_cs
 
     public class MatrixChainMultiplicationDP
     {
+        /// <summary>
+        /// Calculates the minimum number of operations necessary to multiply a sequence of matrices using Dynamic Programming approach
+        /// </summary>
+        /// <param name="matrixDimensionArray">An integer array containing the dimensions of the matrices to be multiplied.</param>
+        /// <param name="matrixOrder">A reference parameter to store the order of multiplication of the matrices.</param>
+        /// <param name="operationCount">A reference parameter to store the total number of operations necessary for multiplication.</param>
+        /// <param name="enableDebug">A boolean flag to enable/disable debug mode.</param>
+        /// <returns>The minimum number of operations necessary for multiplication.</returns>
+
         public static int Mcmdp(int[] matrixDimensionArray, ref string matrixOrder, ref int operationCount, bool enableDebug = false)
         {
+            // Get the length of the matrix dimension array.
             int n = matrixDimensionArray.Length - 1;
+
+            // Create two-dimensional arrays to store the intermediate results.
             int[,] m = new int[n, n];
             int[,] s = new int[n, n];
 
+            // Loop through the length of the matrix dimension array to calculate the minimum number of operations necessary for multiplication.
             for (int len = 2; len <= n; len++)
             {
                 for (int i = 0; i <= n - len; i++)
                 {
                     int j = i + len - 1;
+
+                    // Initially set minimum cost to maximum.
                     m[i, j] = int.MaxValue;
+
 
                     for (int k = i; k < j; k++)
                     {
                         int cost = m[i, k] + m[k + 1, j] + matrixDimensionArray[i] * matrixDimensionArray[k + 1] * matrixDimensionArray[j + 1];
 
+                        // Update the minimum cost and split position if a lower cost is found.
                         if (cost < m[i, j])
                         {
                             m[i, j] = cost;
                             s[i, j] = k;
                         }
 
+                        // If debug mode is enabled, print the intermediate results.
                         if (enableDebug)
                         {
                             Console.WriteLine($"M[{i},{j}] = {m[i, j]}");
                         }
 
+                        // Enhancement the operation count.
                         operationCount++;
+
                     }
                 }
             }
 
+            // Build the matrix multiplication order using the split positions stored in the s array.
             matrixOrder = BuildMatrixOrder(s, 0, n - 1);
+
+            // Enhancement the operation count.
             operationCount += n - 1;
 
+            // Return the minimum number of operations required for multiplication.
             return m[0, n - 1];
+
         }
+
+        /// <summary>
+        /// Recursively builds the matrix multiplication order from the split positions stored in the s array.
+        /// </summary>
+        /// <param name="s">A two-dimensional array containing the split positions.</param>
+        /// <param name="i">The start index of the sequence of matrices.</param>
+        /// <param name="j">The end index of the sequence of matrices.</param>
+        /// <returns>The matrix multiplication order as a string.</returns>
 
         public static string BuildMatrixOrder(int[,] s, int i, int j)
         {
