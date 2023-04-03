@@ -54,17 +54,17 @@ namespace ce100_hw2_algo_lib_cs
             // Return 0 after the sorting completes successfully.
             return 0;
         }
-        
+
+        /// <summary>
+        /// Persists the max-heap property of the input array.
+        /// </summary>
+        /// <param name="arr">The input integer array which needs to persist the max-heap property.</param>
+        /// <param name="i">The root index of the subtree.</param>
+        /// <param name="n">The size of the heap.</param>
+        /// <param name="enableDebug">If true, debug info will be printed to the console.</param>
         private static void MaxHeapify(int[] arr, int i, int n, bool enableDebug)
         {
-            /// <summary>
-            /// Persists the max-heap property of the input array.
-            /// </summary>
-            /// <param name="arr">The input integer array which needs to persist the max-heap property.</param>
-            /// <param name="i">The root index of the subtree.</param>
-            /// <param name="n">The size of the heap.</param>
-            /// <param name="enableDebug">If true, debug info will be printed to the console.</param>
-
+     
             // Consider the root node as the largest.
             int largest = i;
 
