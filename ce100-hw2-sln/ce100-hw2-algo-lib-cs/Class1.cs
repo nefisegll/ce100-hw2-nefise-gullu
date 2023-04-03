@@ -7,12 +7,23 @@ using System.Threading.Tasks;
 namespace ce100_hw2_algo_lib_cs
 {
     public class HeapSortAlgorithm
-    {        
+    {
+        /// <summary>
+        /// Sorts an array of integers using the Heap Sort algorithm.
+        /// </summary>
+        /// <param name="inputArray">The input integer array to be sorted.</param>
+        /// <param name="outputArray">Output integer array will contain sorted items.</param>
+        /// <param name="enableDebug">If true, debug info will be printed to the console.</param>
+        /// <returns>Returns 0 upon sorting is completed successfully.</returns>
         public static int HeapSort(int[] inputArray, ref int[] outputArray, bool enableDebug = false)
         {
+            // Get the length of the input array.
             int n = inputArray.Length;
+
+           // Create a new array of length n + 1 to be used as the heap.
             int[] heapArray = new int[n + 1];
-            
+
+            // Fill the heap array with elements from input array.
             for (int i = 0; i < n; i++)
             {
                 heapArray[i + 1] = inputArray[i];
@@ -21,12 +32,14 @@ namespace ce100_hw2_algo_lib_cs
                     Console.WriteLine("Inserted element " + heapArray[i + 1] + " into heap");
                 }
             }
-            
+
+            // Create a max heap from the heap array.
             for (int i = n / 2; i >= 1; i--)
             {
                 MaxHeapify(heapArray, i, n, enableDebug);
             }
-            
+
+            //Extract the maximum element from the heap and put it into output array till heap is empty.
             for (int i = n; i >= 1; i--)
             {
                 outputArray[i - 1] = heapArray[1];
@@ -38,24 +51,40 @@ namespace ce100_hw2_algo_lib_cs
                 MaxHeapify(heapArray, 1, i - 1, enableDebug);
             }
 
+            // Return 0 after the sorting completes successfully.
             return 0;
         }
         
         private static void MaxHeapify(int[] arr, int i, int n, bool enableDebug)
         {
+            /// <summary>
+            /// Persists the max-heap property of the input array.
+            /// </summary>
+            /// <param name="arr">The input integer array which needs to persist the max-heap property.</param>
+            /// <param name="i">The root index of the subtree.</param>
+            /// <param name="n">The size of the heap.</param>
+            /// <param name="enableDebug">If true, debug info will be printed to the console.</param>
+
+            // Consider the root node as the largest.
             int largest = i;
+
+            // Calculate indices of left and right child nodes.
             int left = 2 * i;
             int right = 2 * i + 1;
 
+            // If left child is larger than root, mark it as largest.
             if (left <= n && arr[left] > arr[largest])
             {
                 largest = left;
             }
+
+            // If right child is larger than root, mark it as largest.
             if (right <= n && arr[right] > arr[largest])
             {
                 largest = right;
             }
 
+            // In case the largest node is the root node or not swap them and persist the max-heap property.
             if (largest != i)
             {
                 int temp = arr[i];
