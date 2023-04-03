@@ -255,5 +255,72 @@ namespace ce100_hw2_algo_lib_cs
             return 0;
         }
     }
+    public class TheKnapsackProblem
+    {
+        public static int Knapsackdp(int[] Weights, int[] Values, ref int[] SelectedIndices, ref int maxBenefit, bool enableDebug = false)
+        {
+            int n = Weights.Length;
+            int W = maxBenefit;
 
+            // Create a table to store sub-problems
+            int[,] K = new int[n + 1, W + 1];
+
+            // Build table K[][] in bottom up manner
+            for (int i = 0; i <= n; i++)
+            {
+                for (int w = 0; w <= W; w++)
+                {
+                    if (i == 0 || w == 0)
+                    {
+                        K[i, w] = 0;
+                    }
+                    else if (Weights[i - 1] <= w)
+                    {
+                        K[i, w] = Math.Max(Values[i - 1] + K[i - 1, w - Weights[i - 1]], K[i - 1, w]);
+                    }
+                    else
+                    {
+                        K[i, w] = K[i - 1, w];
+                    }
+                }
+            }
+
+            // Get the maximum benefit
+            maxBenefit = K[n, W];
+
+            // Backtrack to find selected items
+            int j = W;
+            for (int i = n; i > 0 && maxBenefit > 0; i--)
+            {
+                if (maxBenefit == K[i - 1, j])
+                {
+                    continue;
+                }
+                else
+                {
+                    // Add the index of selected item to the output array
+                    SelectedIndices[i - 1] = i - 1;
+
+                    // Subtract weight and benefit of selected item
+                    maxBenefit -= Values[i - 1];
+                    j -= Weights[i - 1];
+                }
+            }
+
+            // If debug mode is enabled, print the table K[][]
+            if (enableDebug)
+            {
+                for (int i = 0; i <= n; i++)
+                {
+                    for (int w = 0; w <= W; w++)
+                    {
+                        Console.Write(K[i, w] + " ");
+                    }
+                    Console.WriteLine("");
+                }
+            }
+
+            return 0;
+        }
+    }
 }

@@ -225,6 +225,57 @@ namespace ce100_hw2_algo_test_cs
         }
     }
 
+    [TestClass]
+    public class TheKnapsackProblemTests
+    {
+        [TestMethod]
+        public void Knapsackdp_WorstCase_ReturnsExpectedResult()
+        {
+            int[] weights = { 2, 3, 4, 5 };
+            int[] values = { 3, 4, 5, 6 };
+            int[] selectedIndices = new int[weights.Length];
+            int maxBenefit = 1;
+            int expectedBenefit = 0;
+            int[] expectedIndices = { 0, 0, 0, 0 };
+
+            int result = TheKnapsackProblem.Knapsackdp(weights, values, ref selectedIndices, ref maxBenefit);
+
+            Assert.AreEqual(expectedBenefit, maxBenefit);
+            CollectionAssert.AreEqual(expectedIndices, selectedIndices);
+        }
+        [TestMethod]
+        public void Knapsackdp_BestCase()
+        {
+            int[] weights = { 1, 2, 3 };
+            int[] values = { 10, 20, 30 };
+            int[] selectedIndices = new int[weights.Length];
+            int maxBenefit = 6;
+            int expectedMaxBenefit = 0;
+
+            int result = TheKnapsackProblem.Knapsackdp(weights, values, ref selectedIndices, ref maxBenefit);
+
+            Assert.AreEqual(expectedMaxBenefit, maxBenefit);
+            CollectionAssert.AreEqual(new int[] { 0, 1, 2 }, selectedIndices);
+            Assert.AreEqual(0, result);
+        }
+        [TestMethod]
+      
+        public void TestKnapsackDP_AverageCase()
+        {
+            int[] weights = { 2, 3, 1, 5, 4 };
+            int[] values = { 20, 30, 10, 50, 40 };
+            int[] selectedIndices = new int[5];
+            int maxBenefit = 0;
+           
+
+            TheKnapsackProblem.Knapsackdp(weights, values, ref selectedIndices, ref maxBenefit);
+
+            Assert.AreEqual(0, maxBenefit);
+            Array.Clear(selectedIndices, 0, selectedIndices.Length);
+        }
+    }
+
+
 
 
 
