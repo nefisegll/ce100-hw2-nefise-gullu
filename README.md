@@ -19,4 +19,4 @@
 Functions run via Visual Studio 2022.
 
 # TESTING
-Functions unit tested for all functionality (bad case, average case and worst case) via Visual Studio 2022.
+Functions unit tested for all functionality (best case, average case and worst case) via Visual Studio 2022.
