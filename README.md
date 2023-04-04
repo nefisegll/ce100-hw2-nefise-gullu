@@ -14,3 +14,9 @@
 -Git Bash
 
 -WebSite: []()https://ucoruh.github.io/ce100-algorithms-and-programming-II/
+
+# RUNNING
+Functions run via Visual Studio 2022.
+
+# TESTING
+Functions unit tested for all functionality (bad case, average case and worst case) via Visual Studio 2022.
