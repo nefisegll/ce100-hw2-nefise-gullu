@@ -285,12 +285,23 @@ namespace ce100_hw2_algo_lib_cs
     }
     public class LongestCommonSubsequence
     {
+        /// <summary>
+        /// Finds the LCS of two input strings.
+        /// </summary>
+        /// <param name="inputArray1">The first input string.</param>
+        /// <param name="inputArray2">The second input string.</param>
+        /// <param name="outputLcs">The output LCS string.</param>
+        /// <param name="outputLcslength">The length of the output LCS.</param>
+        /// <param name="enableDebug">Flag to enable debug logging.</param>
+        /// <returns>Every time returns 0.</returns>
         public static int Lcs(string inputArray1, string inputArray2, out string outputLcs, out int outputLcslength, bool enableDebug = false)
         {
+            // Initialize variables.
             int m = inputArray1.Length;
             int n = inputArray2.Length;
             int[,] lcsArray = new int[m + 1, n + 1];
 
+            // Fill the LCS array.
             for (int i = 0; i <= m; i++)
             {
                 for (int j = 0; j <= n; j++)
@@ -310,6 +321,7 @@ namespace ce100_hw2_algo_lib_cs
                 }
             }
 
+            // Get the LCS string from the LCS array.
             outputLcslength = lcsArray[m, n];
             outputLcs = "";
             int index = outputLcslength;
@@ -334,12 +346,14 @@ namespace ce100_hw2_algo_lib_cs
             }
             outputLcs = new string(outputLcs.Reverse().ToArray());
 
+            // Output the results if debugging is enabled.
             if (enableDebug)
             {
                 Console.WriteLine($"LCS Length: {outputLcslength}");
                 Console.WriteLine($"LCS String: {outputLcs}");
             }
 
+            // Return success code.
             return 0;
         }
     }
