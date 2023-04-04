@@ -359,15 +359,27 @@ namespace ce100_hw2_algo_lib_cs
     }
     public class TheKnapsackProblem
     {
+        /// <summary>
+        /// Solves The 0-1 Knapsack Problem using DP.
+        /// </summary>
+        /// <param name="Weights">An array of item weights.</param>
+        /// <param name="Values">An array of item values.</param>
+        /// <param name="SelectedIndices">An array to store the chosen item indices.</param>
+        /// <param name="maxBenefit">The maximum benefit that can be get from the Knapsack.</param>
+        /// <param name="enableDebug">Optional flag to enable debugging output.</param>
+        /// <returns>Every time returns 0.</returns>
         public static int Knapsackdp(int[] Weights, int[] Values, ref int[] SelectedIndices, ref int maxBenefit, bool enableDebug = false)
         {
+            // Get the item count.
             int n = Weights.Length;
+
+            // Set the maximum weight capacity.
             int W = maxBenefit;
 
-            // Create a table to store sub-problems
+            // Create a 2D array to store the maximum benefits for several combinations of items and weights.
             int[,] K = new int[n + 1, W + 1];
 
-            // Build table K[][] in bottom up manner
+            // Compute the maximum benefits for all probable combinations of items and weights.
             for (int i = 0; i <= n; i++)
             {
                 for (int w = 0; w <= W; w++)
@@ -387,10 +399,10 @@ namespace ce100_hw2_algo_lib_cs
                 }
             }
 
-            // Get the maximum benefit
+            // Get the maximum benefit that can be acquired.
             maxBenefit = K[n, W];
 
-            // Backtrack to find selected items
+            // Move the 2D array in reverse order to determine the indices of the chosen items.
             int j = W;
             for (int i = n; i > 0 && maxBenefit > 0; i--)
             {
@@ -400,16 +412,16 @@ namespace ce100_hw2_algo_lib_cs
                 }
                 else
                 {
-                    // Add the index of selected item to the output array
+                    
                     SelectedIndices[i - 1] = i - 1;
 
-                    // Subtract weight and benefit of selected item
+                    
                     maxBenefit -= Values[i - 1];
                     j -= Weights[i - 1];
                 }
             }
 
-            // If debug mode is enabled, print the table K[][]
+            // Print the 2D array if debugging is enabled.
             if (enableDebug)
             {
                 for (int i = 0; i <= n; i++)
@@ -422,6 +434,7 @@ namespace ce100_hw2_algo_lib_cs
                 }
             }
 
+            // Every time return 0.
             return 0;
         }
     }
