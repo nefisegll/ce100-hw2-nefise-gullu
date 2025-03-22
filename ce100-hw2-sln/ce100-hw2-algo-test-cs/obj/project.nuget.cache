@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qm0fY704iwgoTnZJRZxOmHI0v//P+2BygpPxqEZ5XcfDtQNh+SY8Xyli7sW+SLhTHYUekAAqA/qdSGfFeEqCKg==",
+  "dgSpecHash": "+IDyeoKaJps=",
   "success": true,
-  "projectFilePath": "C:\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
+  "projectFilePath": "C:\\Users\\gullu\\OneDrive\\Masaüstü\\ce100-hw2-nefise-gullu\\ce100-hw2-sln\\ce100-hw2-algo-test-cs\\ce100-hw2-algo-test-cs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gullu\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\gullu\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
@@ -98,7 +98,10 @@
     "C:\\Users\\gullu\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\gullu\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\gullu\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\gullu\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\gullu\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\gullu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\gullu\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\gullu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }

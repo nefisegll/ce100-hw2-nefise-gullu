@@ -93,7 +93,6 @@ C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.AssemblyInfoInputs.cache
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.AssemblyInfo.cs
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.csproj.CoreCompileInputs.cache
-C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.csproj.CopyComplete
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.dll
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\refint\ce100-hw2-algo-test-cs.dll
 C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.pdb
@@ -200,3 +199,5 @@ C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\
 C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.pdb
 C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.genruntimeconfig.cache
 C:\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ref\ce100-hw2-algo-test-cs.dll
+C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw2-algo-test-cs.sourcelink.json
+C:\Users\gullu\OneDrive\Masaüstü\ce100-hw2-nefise-gullu\ce100-hw2-sln\ce100-hw2-algo-test-cs\obj\Debug\net7.0\ce100-hw.619CE9AB.Up2Date

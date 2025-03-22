@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ce100-hw2-algo-test-cs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbe52a3562e8c458c8bbebe7e24fb16fe227fefe")]
 [assembly: System.Reflection.AssemblyProductAttribute("ce100-hw2-algo-test-cs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ce100-hw2-algo-test-cs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1130,7 +1130,10 @@
       },
       "ce100-hw2-algo-lib-cs/1.0.0": {
         "runtime": {
-          "ce100-hw2-algo-lib-cs.dll": {}
+          "ce100-hw2-algo-lib-cs.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {
